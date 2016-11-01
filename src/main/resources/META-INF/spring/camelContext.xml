@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<routes xmlns="http://camel.apache.org/schema/spring">
+    <route id="orderRouter">
+        <from id="orders" uri="direct:orders"/>
+        <to id="processOrders" uri="bean:orderProcessor?method=processOrder"/>
+    </route>
+</routes>
+

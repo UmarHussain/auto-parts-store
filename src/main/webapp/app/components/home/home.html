@@ -1,0 +1,31 @@
+<div>
+    <h1>Auto Parts Online Store</h1>
+    <span>{{message}}</span>
+
+    <table>
+        <tr>
+            <td>ID: {{products.id}}</td>
+            <td>Name: {{products.name}}</td>
+            <td>Available quantity: {{products.quantity}}</td>
+            <td>Price{{products.price}}</td>
+            <td>
+                <button ng-click="buyProduct()">Buy</button>
+            </td>
+        </tr>
+    </table>
+    <span style="color:blueviolet"> {{orderConfirmation}} </span>
+    <table ng-show="isOrder">
+        <tr>
+            <td>Autopart: {{products.id}}</td>
+        </tr>
+        <tr>
+            <td>Quantity: <input type="text" ng-model="quantity" name="quantity" value="0"/></td>
+        </tr>
+        <tr>
+            <td>Total: {{products.price * quantity}}</td>
+        </tr>
+        <tr>
+            <td><button ng-click="confirmOrder()">Confirm</button></td>
+        </tr>
+    </table>
+</div>
